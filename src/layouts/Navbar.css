@@ -51,15 +51,44 @@
 
 .userActions > span > p {
   margin-left: 5px;
-  margin-top: 2px;
+  margin-top: 5px;
   font-size: 14px;
 }
 
-.searchField{
-  background-color: #F3F3F3;
+.userActions > span:hover {
+  color: orange;
+}
+
+.searchField {
+  background-color: #f3f3f3;
   border-radius: 5px;
 }
 
-.searchAppend{
+.categoryItems {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7% 10px 7%;
+  margin: 0 auto;
+  margin-top: 1%;
+  border-bottom: 1px solid rgb(221, 221, 221);
 }
 
+.categoryItems > li {
+  float: left;
+}
+
+.categoryItems > li > a {
+  color: #454545;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.categoryItems > li > a:hover {
+  color: #f27919;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-bottom: 3px solid #f27919;
+  padding-bottom: 10px;
+}

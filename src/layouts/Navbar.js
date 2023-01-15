@@ -1,12 +1,13 @@
 import React from "react";
 import "./Navbar.css";
-import logo from "../assets/logo.png";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Autocomplete from "@mui/material/Autocomplete";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import InputAdornment from "@mui/material/InputAdornment";
+import SearchIcon from "@mui/icons-material/Search";
 
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
@@ -83,6 +84,11 @@ const Navbar = () => {
                 InputProps={{
                   ...params.InputProps,
                   type: "search",
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <SearchIcon fontSize="medium" sx={{ color: "#F27919" }} />
+                    </InputAdornment>
+                  ),
                 }}
               />
             )}
@@ -102,6 +108,40 @@ const Navbar = () => {
             <p>Sepetim</p>
           </span>
         </div>
+      </div>
+      <div className="categoriesNav">
+        <ul className="categoryItems">
+          <li>
+            <a href="#home">Wowan</a>
+          </li>
+          <li>
+            <a href="#news">Man</a>
+          </li>
+          <li>
+            <a href="#contact">Mother & Child</a>
+          </li>
+          <li>
+            <a href="#about">Home & Furniture</a>
+          </li>
+          <li>
+            <a href="#about">Supermarket</a>
+          </li>
+          <li>
+            <a href="#about">Shoes</a>
+          </li>
+          <li>
+            <a href="#about">Bags</a>
+          </li>
+          <li>
+            <a href="#about">Watch</a>
+          </li>
+          <li>
+            <a href="#about">Electronical</a>
+          </li>
+          <li>
+            <a href="#about">Outdoor</a>
+          </li>
+        </ul>
       </div>
     </div>
   );

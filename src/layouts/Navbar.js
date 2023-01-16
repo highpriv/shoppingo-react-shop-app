@@ -3,12 +3,14 @@ import "./Navbar.css";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Autocomplete from "@mui/material/Autocomplete";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import InputAdornment from "@mui/material/InputAdornment";
-import SearchIcon from "@mui/icons-material/Search";
 
+import {
+  ShoppingCartOutlinedIcon,
+  SearchIcon,
+  FavoriteBorderIcon,
+  PermIdentityIcon,
+} from "@mui/icons-material";
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
   { title: "The Godfather", year: 1972 },

@@ -1,0 +1,22 @@
+.campaign-container {
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 8vh;
+  gap: 3vw;
+}
+
+.campaign-text-wrapper {
+  background-color: black;
+  height: 0.8vh;
+}
+
+.campaign-text {
+  color: white;
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}

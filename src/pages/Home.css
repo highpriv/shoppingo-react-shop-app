@@ -1,4 +1,27 @@
 *{
     margin:0;
     padding: 0;
+    
+}
+
+.containerMain{
+    overflow-x: hidden;
+}
+
+.best-sellers{
+    width:85%;
+    margin: 0 auto;
+    margin-top:3%;
+    background-color: #FFFAF6;
+    border: 1px solid #F2E5DA;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+.carousel-head{
+    font-weight: 900;
+    font-size: 20px;
+    width:100%;
+    display: inline-block;
+    padding:3%;
 }

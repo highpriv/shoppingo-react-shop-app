@@ -1,14 +1,17 @@
 .campaign-container {
-  display: flex;
+  display: grid;
   width: 85%;
   margin: 0 auto;
-  margin-top: 8vh;
-  gap: 3vw;
+  margin-top:3%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 3%;
+  grid-row-gap: 3%;
 }
+
 
 .campaign-text-wrapper {
   background-color: black;
-  height: 0.8vh;
+  height: 5vh;
 }
 
 .campaign-text {
@@ -20,3 +23,4 @@
   overflow: hidden !important;
   text-overflow: ellipsis;
 }
+

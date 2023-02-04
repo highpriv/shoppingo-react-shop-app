@@ -16,24 +16,17 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 270px;
+    height: 35vh;
     margin-left:1%; 
     color: black
 }
 
 .indicators{
-    position: absolute;
-    bottom:60%;
     width:100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap:5vw;
+    margin-top: 5vh;
 }
 
-.indicators > button{
-    background-color: rgb(255, 255, 255);
-    border:3px solid grey;
-    margin: -2vw;  
-    border-radius: 50%;
-    padding:1%;
-}
 

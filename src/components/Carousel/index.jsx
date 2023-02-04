@@ -1,5 +1,8 @@
 import React, {useState} from "react";
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import IconButton from '@mui/material/IconButton';
+
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "./Carousel.css";
 
 export const CarouselItem = ({children, width}) => {
@@ -27,16 +30,17 @@ return(
 
   <div className="carousel">
     <div className="inner" 
-    style={{transform: `translateX(-${activeIndex * 17}%)`}}>
+    style={{transform: `translateX(-${activeIndex * 10.3}%)`}}>
       {React.Children.map(children, (child, index) => {
-        return React.cloneElement(child, {width:"17%"})
+        return React.cloneElement(child, {width:"20%"})
       })}
     </div>
     <div className="indicators">
-      <button onClick={() => {updateIndex(activeIndex - 1)}}>Prev</button>
-      <button onClick={() => {updateIndex(activeIndex + 1)}}>
-  <NavigateNextIcon size="large" />
-</button>
+      <IconButton onClick={() => {updateIndex(activeIndex - 1)}} size="small">  <ArrowBackIosNewIcon />
+</IconButton>
+      <IconButton onClick={() => {updateIndex(activeIndex + 1)}} size="small">
+  <ArrowForwardIosIcon  />
+</IconButton>
 
     </div>
   </div>

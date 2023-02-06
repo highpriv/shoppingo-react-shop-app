@@ -1,0 +1,38 @@
+
+.containerMain{
+    overflow-x: hidden;
+}
+
+.bestSellers{
+    width:85%;
+    margin: 0 auto;
+    margin-top:3%;
+    background-color: #FFFAF6;
+    border: 1px solid #F2E5DA;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+.carouselHead{
+    font-weight: 900;
+    font-size: 20px;
+    width:100%;
+    display: inline-block;
+    padding:3%;
+}
+
+.randomItems{
+    width:85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px 5%;
+    margin-bottom: 10vh;
+}
+
+.randomItem{
+    width:20%;
+
+}

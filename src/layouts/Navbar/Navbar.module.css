@@ -1,0 +1,95 @@
+.containerHeader {
+  width: 100vw;
+  padding-top: 1vh;
+}
+
+.topMenu {
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+.topMenu > li > a {
+  display: inline-block;
+  color: rgb(127, 127, 127);
+  margin-left: 1.2vw;
+  font-size: small;
+}
+
+.logo > a > img {
+  width: 12vw;
+  height: 100%;
+  margin-top: -1.4vh;
+}
+
+.bottomNavWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+
+.searchbar {
+  width: 40vw;
+}
+
+.userActions {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 1vh;
+}
+
+.userActions > a {
+  display: flex;
+  flex-direction: row;
+  color: #454545;
+}
+
+.userActions > a > p {
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.userActions > a:hover {
+  color: orange;
+}
+
+.searchField {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+
+.categoryItems {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7% 10px 7%;
+  margin: 0 auto;
+  margin-top: 1%;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.categoryItems > li {
+  float: left;
+}
+
+.categoryItems > li > a {
+  color: #454545;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.categoryItems > li > a:hover {
+  color: #f27919;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-bottom: 3px solid #f27919;
+  padding-bottom: 10px;
+}

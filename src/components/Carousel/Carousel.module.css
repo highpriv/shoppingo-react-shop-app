@@ -1,0 +1,32 @@
+.carousel{
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 3%;
+}
+
+.inner{
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.carouselItem{
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #F9F4F0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+    margin-left:1%; 
+    color: black
+}
+
+.indicators{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    gap:5vw;
+    margin-top: 5vh;
+}
+
+

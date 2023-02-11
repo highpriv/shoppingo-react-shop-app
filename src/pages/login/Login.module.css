@@ -101,16 +101,14 @@ border-left: none;
         margin-top:10px;
 }
 
-.loginButton{
-    display: inline-block;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-top:30px;
-}
 
 
-.loginButton > span > button {
-    margin: 0 auto;
+.inputField  > span > button {
     background-color: #FF8B38;
     font-weight: 800;
+    width: 108%;
+    padding: 12px;
+    border:0;
+    color:white;
+    border-radius: 5px;
 }

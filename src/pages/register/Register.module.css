@@ -1,0 +1,117 @@
+
+
+.welcomeHead{
+    width:100%;
+    text-align: center;
+    margin-top:10vh;
+}
+
+.authBox{
+    border-right: none;
+    border-top: none;
+    width:30%;
+    margin:0 auto;
+    border-radius: 5px;
+}
+
+.authTabs{
+    display: flex;
+    width: 100.5%;
+    justify-content: space-between;
+}
+
+.authTabs > span{
+    padding: 10px;
+    width: 100%;
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #E6E6E6;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.authTabs > .whiteSpace{
+    flex-shrink: 3;
+    border: none;
+    border-bottom: 1px solid #E6E6E6;
+    background-color: white;
+}
+
+.authTabs > .activeTab{
+background-color: white;
+border: 1px solid #E6E6E6;
+border-bottom: none;
+}
+
+
+.authTabs > span > a {
+    color: black;
+}
+.activeTab > a {
+    color: #f27919
+}
+
+.formSection{
+    width:100%;
+    border:1px solid #E6E6E6;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+}
+
+.formArea{
+    padding:10% 5% 10% 5%;
+}
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+}
+
+.inputField > span{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 65%;
+    margin: 0 auto;
+    padding: 5px;
+    font-weight: 800;
+}
+
+.inputField > span > input {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #E6E6E6;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.forgottenPw{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.forgottenPw > span > a {
+    color: black;
+    text-decoration: underline;
+}
+
+.forgottenPw > span {
+        margin-top:10px;
+}
+
+
+
+.inputField  > span > button {
+    background-color: #FF8B38;
+    font-weight: 800;
+    width: 108%;
+    padding: 12px;
+    border:0;
+    color:white;
+    border-radius: 5px;
+}

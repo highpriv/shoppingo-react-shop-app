@@ -1,8 +1,47 @@
 import Navbar from "../../layouts";
 import styles from "./Register.module.css";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
+import AuthService from "../../services/auth";
+import { useState } from "react";
 
 const Register = () => {
+  const [successful, setSuccessful] = useState(false);
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleRegister = (e) => {
+    try {
+      AuthService.register(email, password).then(
+        (response) => {
+          setMessage(response.data.message);
+          setSuccessful(true);
+        },
+        (error) => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+
+          setMessage(resMessage);
+          setSuccessful(false);
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <div className={styles.containerMain}>
       <Navbar />
@@ -16,24 +55,31 @@ const Register = () => {
               <a href="#">Giriş Yap</a>
             </span>
             <span className={styles.whiteSpace}></span>
-            <span className={styles.activeTab}>
-              Üye Ol
-            </span>
+            <span className={styles.activeTab}>Üye Ol</span>
           </div>
 
           <div className={styles.formSection}>
-
             <form className={styles.formArea}>
               <div className={styles.inputField}>
                 <span>E-Posta</span>
                 <span>
-                  <input type="text" class="mail" name="mail" />
+                  <input
+                    type="text"
+                    name="mail"
+                    value={email}
+                    onChange={onChangeEmail}
+                  />
                 </span>
               </div>
               <div className={styles.inputField}>
                 <span>Şifre</span>
                 <span>
-                  <input type="password" class="password" name="password" />
+                  <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={onChangePassword}
+                  />
                 </span>
               </div>
               <div className={styles.forgottenPw}>
@@ -43,13 +89,16 @@ const Register = () => {
               </div>
               <div className={styles.inputField}>
                 <span>
-                  <Button variant="contained" disableElevation class="loginButton">
+                  <Button
+                    variant="contained"
+                    disableElevation
+                    onClick={handleRegister}
+                  >
                     ÜYE OL
                   </Button>
-                  </span>
+                </span>
               </div>
             </form>
-
           </div>
         </div>
       </div>
@@ -58,4 +107,3 @@ const Register = () => {
 };
 
 export default Register;
-

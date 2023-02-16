@@ -14,14 +14,14 @@ const Register = () => {
     try {
       AuthService.register(email, password).then(
         (response) => {
-          setMessage(response.data.message);
+          setMessage("Created account.");
           setSuccessful(true);
         },
         (error) => {
           const resMessage =
             (error.response &&
               error.response.data &&
-              error.response.data.message) ||
+              error.response.data.error) ||
             error.message ||
             error.toString();
 
@@ -48,6 +48,7 @@ const Register = () => {
       <div className={styles.welcomeHead}>
         <h1>Merhaba,</h1>
         <p>ShoppinGo'ya giriş yap veya üye ol, fırsatları kaçırma!</p>
+        <p>{message || successful}</p>
 
         <div className={styles.authBox}>
           <div className={styles.authTabs}>

@@ -1,10 +1,7 @@
 import axios from "axios";
-
-const apiUrl = process.env.API_DOMAIN;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const register = async (email, password) => {
-  alert(apiUrl);
-
   return axios.post(apiUrl + "register", {
     email,
     password,

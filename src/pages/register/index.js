@@ -3,10 +3,11 @@ import styles from "./Register.module.css";
 import Button from "@mui/material/Button";
 import AuthService from "../../services/auth";
 import { useState } from "react";
+import Alert from "@mui/material/Alert";
 
 const Register = () => {
   const [successful, setSuccessful] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,18 +15,14 @@ const Register = () => {
     try {
       AuthService.register(email, password).then(
         (response) => {
-          setMessage("Created account.");
+          setMessage({ type: "success", message: "Created account." });
           setSuccessful(true);
         },
         (error) => {
           const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.error) ||
-            error.message ||
-            error.toString();
-
-          setMessage(resMessage);
+            (error.response && error.response.data.error) ||
+            error.response.data.message;
+          setMessage({ type: "error", message: resMessage });
           setSuccessful(false);
         }
       );
@@ -48,12 +45,19 @@ const Register = () => {
       <div className={styles.welcomeHead}>
         <h1>Merhaba,</h1>
         <p>ShoppinGo'ya giriş yap veya üye ol, fırsatları kaçırma!</p>
-        <p>{message || successful}</p>
+
+        {message.message ? (
+          <Alert severity={message.type} className={styles.messageDialog}>
+            <span>{message.message}</span>
+          </Alert>
+        ) : (
+          ""
+        )}
 
         <div className={styles.authBox}>
           <div className={styles.authTabs}>
             <span>
-              <a href="#">Giriş Yap</a>
+              <a href="/login">Giriş Yap</a>
             </span>
             <span className={styles.whiteSpace}></span>
             <span className={styles.activeTab}>Üye Ol</span>
@@ -81,11 +85,6 @@ const Register = () => {
                     value={password}
                     onChange={onChangePassword}
                   />
-                </span>
-              </div>
-              <div className={styles.forgottenPw}>
-                <span>
-                  <a href="#">Şifremi Unuttum</a>
                 </span>
               </div>
               <div className={styles.inputField}>

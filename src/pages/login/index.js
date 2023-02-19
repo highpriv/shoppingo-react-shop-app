@@ -1,6 +1,6 @@
 import Navbar from "../../layouts";
 import styles from "./Login.module.css";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
 const Login = () => {
   return (
@@ -17,12 +17,13 @@ const Login = () => {
             </span>
             <span className={styles.whiteSpace}></span>
             <span>
-              Üye Ol
+              <a className={styles.registerLink} href="/register">
+                Üye Ol
+              </a>
             </span>
           </div>
 
           <div className={styles.formSection}>
-
             <form className={styles.formArea}>
               <div className={styles.inputField}>
                 <span>E-Posta</span>
@@ -43,13 +44,16 @@ const Login = () => {
               </div>
               <div className={styles.inputField}>
                 <span>
-                  <Button variant="contained" disableElevation class="loginButton">
+                  <Button
+                    variant="contained"
+                    disableElevation
+                    class="loginButton"
+                  >
                     GİRİŞ YAP
                   </Button>
-                  </span>
+                </span>
               </div>
             </form>
-
           </div>
         </div>
       </div>
@@ -58,4 +62,3 @@ const Login = () => {
 };
 
 export default Login;
-

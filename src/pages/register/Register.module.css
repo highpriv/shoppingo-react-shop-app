@@ -12,6 +12,7 @@
     width:30%;
     margin:0 auto;
     border-radius: 5px;
+    margin-top:3%;
 }
 
 .authTabs{
@@ -39,6 +40,7 @@
 .authTabs > .activeTab{
 background-color: white;
 border: 1px solid #E6E6E6;
+color: #f27919;
 border-bottom: none;
 }
 
@@ -115,3 +117,11 @@ border-bottom: none;
     color:white;
     border-radius: 5px;
 }
+
+.messageDialog{
+    width: 30%;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+}
+

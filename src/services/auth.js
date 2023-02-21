@@ -9,18 +9,10 @@ const register = async (email, password) => {
 };
 
 const login = async (email, password) => {
-  return axios
-    .post(apiUrl + "login", {
-      email,
-      password,
-    })
-    .then((response) => {
-      if (response.data.token) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-      }
-
-      return response.data;
-    });
+  return axios.post(apiUrl + "login", {
+    email,
+    password,
+  });
 };
 
 const logout = () => {

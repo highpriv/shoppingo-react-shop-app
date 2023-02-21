@@ -118,3 +118,12 @@ border-left: none;
     color:white;
     border-radius: 5px;
 }
+
+
+.messageDialog{
+    width: 30%;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+}
+

@@ -1,15 +1,67 @@
 import Navbar from "../../layouts";
 import styles from "./Login.module.css";
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import AuthService from "../../services/auth";
+import { useCookies } from "react-cookie";
+import Alert from "@mui/material/Alert";
 
 const Login = () => {
+  const [successful, setSuccessful] = useState(false);
+  const [message, setMessage] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cookie, setCookie] = useCookies(["user"]);
+
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = (e) => {
+    try {
+      AuthService.login(email, password).then(
+        (response) => {
+          if (response.data.token) {
+            setCookie("user", response.data.token, {
+              path: "/",
+              maxAge: 3600, // Expires after 1hr
+              sameSite: true,
+            });
+          }
+
+          setMessage({ type: "success", message: "Logged in successfully." });
+          setSuccessful(true);
+        },
+        (error) => {
+          const resMessage =
+            (error.response && error.response.data.error) ||
+            error.response.data.message;
+          setMessage({ type: "error", message: resMessage });
+          setSuccessful(false);
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className={styles.containerMain}>
       <Navbar />
       <div className={styles.welcomeHead}>
         <h1>Merhaba,</h1>
         <p>ShoppinGo'ya giriş yap veya üye ol, fırsatları kaçırma!</p>
-
+        {message.message ? (
+          <Alert severity={message.type} className={styles.messageDialog}>
+            <span>{message.message}</span>
+          </Alert>
+        ) : (
+          ""
+        )}
         <div className={styles.authBox}>
           <div className={styles.authTabs}>
             <span className={styles.activeTab}>
@@ -28,13 +80,25 @@ const Login = () => {
               <div className={styles.inputField}>
                 <span>E-Posta</span>
                 <span>
-                  <input type="text" class="mail" name="mail" />
+                  <input
+                    type="text"
+                    class="mail"
+                    name="mail"
+                    value={email}
+                    onChange={onChangeEmail}
+                  />
                 </span>
               </div>
               <div className={styles.inputField}>
                 <span>Şifre</span>
                 <span>
-                  <input type="password" class="password" name="password" />
+                  <input
+                    type="password"
+                    class="password"
+                    name="password"
+                    value={password}
+                    onChange={onChangePassword}
+                  />
                 </span>
               </div>
               <div className={styles.forgottenPw}>
@@ -46,8 +110,8 @@ const Login = () => {
                 <span>
                   <Button
                     variant="contained"
+                    onClick={handleLogin}
                     disableElevation
-                    class="loginButton"
                   >
                     GİRİŞ YAP
                   </Button>

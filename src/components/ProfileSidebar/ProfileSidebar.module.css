@@ -1,5 +1,5 @@
 .container{
-    width: 100%;
+    width: 15vw;
 }
 
 .container > h2 {
@@ -14,3 +14,4 @@
 .selectedText > span {
    font-weight: 900;
 }
+

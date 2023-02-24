@@ -1,3 +1,14 @@
+.contentArea{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
 .sidebarProfile{
     padding: 2vw 2vw 2vw 10vw;
+    width: 15vw;
+}
+
+.ordersSection{
+    padding: 2vw 2vw 2vw 10vw;
+    width: 15vw;
 }

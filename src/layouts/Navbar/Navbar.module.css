@@ -33,9 +33,7 @@
   margin-top: 5vh;
 }
 
-.searchbar {
-  width: 40vw;
-}
+
 
 .userActions {
   display: flex;
@@ -60,10 +58,6 @@
   color: orange;
 }
 
-.searchField {
-  background-color: #f3f3f3;
-  border-radius: 5px;
-}
 
 .categoryItems {
   display: flex;

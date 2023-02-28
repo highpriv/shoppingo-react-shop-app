@@ -95,7 +95,7 @@ function Navbar() {
           />
         </div>
         <div className={style.userActions}>
-          <a className={style.loginContainer} href="">
+          <a className={style.loginContainer} href="/login">
             <PermIdentityIcon fontSize="medium" />
             <p>Giriş Yap</p>
           </a>
@@ -103,7 +103,7 @@ function Navbar() {
             <FavoriteBorderIcon fontSize="medium" />
             <p>Favorilerim</p>
           </a>
-          <a className={style.shoppingCartContainer} href="">
+          <a className={style.shoppingCartContainer} href="/">
             <ShoppingCartOutlinedIcon fontSize="medium" />
             <p>Sepetim</p>
           </a>

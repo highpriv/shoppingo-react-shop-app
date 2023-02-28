@@ -5,8 +5,9 @@ import { useState } from "react";
 import AuthService from "../../services/auth";
 import { useCookies } from "react-cookie";
 import Alert from "@mui/material/Alert";
+import { providers, signIn, getSession, csrfToken } from "next-auth/react";
 
-const Login = () => {
+export default function Login({providers, csrfToken}) {
   const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState([]);
   const [email, setEmail] = useState("");
@@ -110,7 +111,6 @@ const Login = () => {
                 <span>
                   <Button
                     variant="contained"
-                    onClick={handleLogin}
                     disableElevation
                   >
                     GİRİŞ YAP
@@ -125,4 +125,21 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.getInitialProps = async (context) => {
+  const { req, res } = context;
+  const session = await getSession({ req });
+
+  if (session && res && session.accessToken) {
+    res.writeHead(302, {
+      Location: "/",
+    });
+    res.end();
+    return;
+  }
+
+  return {
+    session: undefined,
+    providers: await providers(context),
+    csrfToken: await csrfToken(context),
+  };
+};

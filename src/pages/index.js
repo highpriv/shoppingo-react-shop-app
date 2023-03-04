@@ -13,7 +13,6 @@ import styles from "./index.module.css";
 const Home = () => {
   return (
     <div className={styles.containerMain}>
-      <Navbar />
       <div className={styles.topBrands}>
         <Brands />
       </div>

@@ -1,0 +1,39 @@
+.container{
+    margin:0 auto;
+    width: 60vw;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 10px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+
+.averageSection
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.averageSection > h3 {
+    font-size: 24px;
+}
+
+.avgStars{
+    display: flex;
+    align-items: center;
+}
+
+.avgStars > h3
+{
+    margin-right: 10px;
+}
+
+.commentCount {
+    display: flex;
+    gap: 15px;
+    font-size: 16px;
+    align-items: center;
+    color: rgb(162, 162, 162);
+}

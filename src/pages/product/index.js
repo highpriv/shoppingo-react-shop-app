@@ -6,7 +6,6 @@ import { ProductSection, CommentsSection, Carousel } from "../../components";
 function Product() {
   return (
     <div>
-      <Navbar />
       <div className={style.container}>
         <ProductSection />
 

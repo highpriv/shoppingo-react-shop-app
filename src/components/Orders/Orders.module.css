@@ -1,3 +1,80 @@
-.searchMyOrders{
+.container
+{
+border: 1px solid rgb(222, 222, 222);
+border-radius: 5px;
+margin-top: 3vh;
+width: 100%;
+}
+
+.topDetails{
     display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid rgb(222, 222, 222);
+
+}
+
+.orderDate
+{
+    display: flex;
+    flex-direction: column;
+}
+.customerDetails
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.price
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.productDetail{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(222, 222, 222);
+    align-items: center;
+    padding: 2%;
+    margin:2%;
+    border-radius: 5px;
+    margin-top:3vh
+}
+
+.deliveryDetails
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.deliveryText{
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.productImg > img{
+    height: 10vh;
+    border: 1px solid rgb(222, 222, 222);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.green{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color:green
+}
+
+.orange{
+    color: #fa9d12;
+    font-weight: 600;
+}
+
+.bold
+{
+    font-weight: 600;
+    color: #616161;
 }

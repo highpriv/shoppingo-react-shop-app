@@ -5,6 +5,8 @@ import MainButtons from "./MainButtons/MainButtons";
 import ProfileSidebar from "./ProfileSidebar/ProfileSidebar";
 import ProductSection from "./ProductSection/ProductSection";
 import CommentsSection from "./CommentsSection/CommentsSection";
+import SearchBar from "./SearchBar/SearchBar";
+import Orders from "./Orders/Orders"
 
 export {
   Brands,
@@ -13,5 +15,7 @@ export {
   MainButtons,
   ProfileSidebar,
   ProductSection,
-  CommentsSection
+  CommentsSection,
+  SearchBar,
+  Orders
 };

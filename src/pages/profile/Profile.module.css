@@ -1,3 +1,56 @@
-.sidebarProfile{
+.wrapper{
     padding: 2vw 2vw 2vw 10vw;
+    display: flex;
+    gap:100px;
+}
+
+
+
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55vw;
+    border: 1px solid rgb(222, 222, 222);
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.topBar > p 
+{
+    font-size: 18px;
+}
+.searchOrders{
+    width: 20vw;
+}
+
+.selectFilter
+{
+    width: 15vw;
+}
+
+.selectInput
+{
+    width: 15vw;
+}
+
+.orderTypes
+{
+    width: 100%;
+    display: flex;
+    gap: 0.5vw;
+    margin-top: 3vh;
+}
+
+.orderButtons
+{
+    border: 1px solid rgb(222, 222, 222);
+    color: black;
+}
+
+.orderButtons:hover
+{
+    border: 2px solid #ffa726;
+    color: black;
+    background-color: white;
 }

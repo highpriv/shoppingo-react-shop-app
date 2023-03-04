@@ -4,6 +4,7 @@ import Carousel from "./Carousel/Carousel";
 import MainButtons from "./MainButtons/MainButtons";
 import ProfileSidebar from "./ProfileSidebar/ProfileSidebar";
 import ProductSection from "./ProductSection/ProductSection";
+import CommentsSection from "./CommentsSection/CommentsSection";
 
 export {
   Brands,
@@ -12,4 +13,5 @@ export {
   MainButtons,
   ProfileSidebar,
   ProductSection,
+  CommentsSection
 };

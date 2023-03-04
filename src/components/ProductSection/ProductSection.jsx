@@ -72,7 +72,7 @@ function ProductSection(props) {
               sx={{ backgroundColor: "#F69452" }}
               className={style.buyButton}
             >
-              Satın Al
+              Sepete Ekle
             </Button>
             <Button sx={{ color: "#F69452" }}>
               <FavoriteBorderIcon />

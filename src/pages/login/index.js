@@ -5,14 +5,18 @@ import { useState } from "react";
 import AuthService from "../../services/auth";
 import { useCookies } from "react-cookie";
 import Alert from "@mui/material/Alert";
-import { providers, signIn, getSession, csrfToken } from "next-auth/react";
+import { useRouter } from "next/router";
+import { signIn } from "next-auth/react";
 
-export default function Login({providers, csrfToken}) {
+
+export default function Login() {
   const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [cookie, setCookie] = useCookies(["user"]);
+  const router = useRouter();
+  const callbackUrl = (router.query?.callbackUrl) ?? "/";
+
 
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -22,29 +26,24 @@ export default function Login({providers, csrfToken}) {
     setPassword(e.target.value);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     try {
-      AuthService.login(email, password).then(
-        (response) => {
-          if (response.data.token) {
-            setCookie("user", response.data.token, {
-              path: "/",
-              maxAge: 3600, // Expires after 1hr
-              sameSite: true,
-            });
-          }
 
-          setMessage({ type: "success", message: "Logged in successfully." });
-          setSuccessful(true);
-        },
-        (error) => {
-          const resMessage =
-            (error.response && error.response.data.error) ||
-            error.response.data.message;
-          setMessage({ type: "error", message: resMessage });
-          setSuccessful(false);
-        }
-      );
+       const response = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      if (!response.error) {
+        setMessage({ type: "success", message: "Logged in successfully." });
+        setSuccessful(true);
+        router.push(callbackUrl);
+      } else {
+      setMessage({ type: "error", message: "An error occured when login." });
+      setSuccessful(false);
+
+      
+      }
     } catch (err) {
       console.log(err);
     }
@@ -75,7 +74,6 @@ export default function Login({providers, csrfToken}) {
               </a>
             </span>
           </div>
-
           <div className={styles.formSection}>
             <form className={styles.formArea}>
               <div className={styles.inputField}>
@@ -112,6 +110,7 @@ export default function Login({providers, csrfToken}) {
                   <Button
                     variant="contained"
                     disableElevation
+                    onClick={handleLogin}
                   >
                     GİRİŞ YAP
                   </Button>
@@ -123,23 +122,4 @@ export default function Login({providers, csrfToken}) {
       </div>
     </div>
   );
-};
-
-Login.getInitialProps = async (context) => {
-  const { req, res } = context;
-  const session = await getSession({ req });
-
-  if (session && res && session.accessToken) {
-    res.writeHead(302, {
-      Location: "/",
-    });
-    res.end();
-    return;
-  }
-
-  return {
-    session: undefined,
-    providers: await providers(context),
-    csrfToken: await csrfToken(context),
-  };
 };

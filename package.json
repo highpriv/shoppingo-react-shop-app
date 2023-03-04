@@ -15,7 +15,7 @@
     "cookie": "^0.5.0",
     "eslint-config-next": "^13.1.6",
     "next": "^13.1.6",
-    "next-auth": "^4.19.2",
+    "next-auth": "^4.20.1",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
@@ -24,8 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "next start -p 8080",
-    "dev": "next dev -p 8080",
+    "start": "sudo next start -p 8080",
+    "dev": "sudo next dev -p 8080",
     "build": "next build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -48,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "4.9.5"
   }
 }

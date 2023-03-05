@@ -44,7 +44,7 @@ function Navbar() {
       </ul>
       <div className={style.bottomNavWrapper}>
         <div className={style.logo}>
-          <a href="#home">
+          <a href="/">
             <img
               src="https://cdn.dsmcdn.com/web/logo/ty-web.svg"
               alt="ShoppinGo Logo"

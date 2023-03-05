@@ -2,12 +2,9 @@ import Navbar from "../../layouts";
 import styles from "./Login.module.css";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import AuthService from "../../services/auth";
-import { useCookies } from "react-cookie";
 import Alert from "@mui/material/Alert";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
-
 
 export default function Login() {
   const [successful, setSuccessful] = useState(false);
@@ -15,7 +12,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const callbackUrl = (router.query?.callbackUrl) ?? "/";
+  const callbackUrl = router.query?.callbackUrl ?? "/";
 
 
   const onChangeEmail = (e) => {
@@ -28,8 +25,7 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     try {
-
-       const response = await signIn("credentials", {
+      const response = await signIn("credentials", {
         email,
         password,
         redirect: false,
@@ -39,10 +35,8 @@ export default function Login() {
         setSuccessful(true);
         router.push(callbackUrl);
       } else {
-      setMessage({ type: "error", message: "An error occured when login." });
-      setSuccessful(false);
-
-      
+        setMessage({ type: "error", message: "An error occured when login." });
+        setSuccessful(false);
       }
     } catch (err) {
       console.log(err);
@@ -51,7 +45,6 @@ export default function Login() {
 
   return (
     <div className={styles.containerMain}>
-      <Navbar />
       <div className={styles.welcomeHead}>
         <h1>Merhaba,</h1>
         <p>ShoppinGo'ya giriş yap veya üye ol, fırsatları kaçırma!</p>
@@ -122,4 +115,4 @@ export default function Login() {
       </div>
     </div>
   );
-};
+}
